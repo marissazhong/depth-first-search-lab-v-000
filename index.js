@@ -4,6 +4,7 @@ function depthFirstSearch(rootNode, vertices, edges) {
   let queue = [rootNode];
   while (queue.length != 0) {
     let currentNode = queue.pop();
+    console.log(currentNode);
     let adjacentNodes = findAdjacent(currentNode.name, vertices,edges);
     if (!currentNode.discovered) {
       currentNode.discovered = "yes";
