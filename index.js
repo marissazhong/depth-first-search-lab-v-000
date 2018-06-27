@@ -11,7 +11,6 @@ function depthFirstSearch(rootNode, vertices, edges) {
       queue.concat(adjacentNodes);
     }
   }
-
   return visited;
 }
 
