@@ -6,8 +6,23 @@ function depthFirstSearch(rootNode, vertices, edges) {
     let currentNode = queue.pop();
     if (!currentNode.discovered) {
       rootNode.discovered = "yes";
+      visited.push(rootNode);
+
     }
   }
 
   return visited;
 }
+
+function findAdjacent(nodeName,  vertices, edges){
+  return edges.filter(function(edge){
+    return edge.includes(nodeName)
+  }).map(function(edge){
+    return edge.filter(function(node){
+      return (node != nodeName)
+    })[0]
+  }).map(function(name){
+    return findNode(name, vertices)
+  }).filter(function(node){
+    return node.distance == null;
+  })
