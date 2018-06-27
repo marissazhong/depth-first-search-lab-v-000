@@ -26,3 +26,4 @@ function findAdjacent(nodeName,  vertices, edges){
   }).filter(function(node){
     return node.distance == null;
   })
+}
