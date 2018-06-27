@@ -4,10 +4,11 @@ function depthFirstSearch(rootNode, vertices, edges) {
   let queue = [rootNode];
   while (queue.length != 0) {
     let currentNode = queue.pop();
+    let adjacentNodes = findAdjacent(currentNode.name, vertices,edges);
     if (!currentNode.discovered) {
       rootNode.discovered = "yes";
       visited.push(rootNode);
-
+      queue.concat(adjacentNodes);
     }
   }
 
